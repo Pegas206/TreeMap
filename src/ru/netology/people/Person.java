@@ -1,15 +1,15 @@
 package ru.netology.people;
 
-import java.util.concurrent.Callable;
-
-public class Person implements Comparable<Person> {
+public class Person {
     private String name;
     private String surname;
+
     public Person(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
         this.age = age;
     }
+
     public String getName() {
         return name;
     }
@@ -34,25 +34,12 @@ public class Person implements Comparable<Person> {
         this.age = age;
     }
 
-    private  int age;
-
-@Override
-public String toString() {
-    return name + " " + surname + " " + age;
-}
+    private int age;
 
     @Override
-    public int compareTo(Person o) {
-        if (getSurname().length() < o.surname.length()) {
-            return 1;
-        } else if (getSurname().length() > o.surname.length()) {
-            return -1;
-        } else if (getAge() < o.age){
-                return 1;
-        }else if (getAge() > o.age){
-            return -1;
-        }
-        return 0;
+    public String toString() {
+        return name + " " + surname + " " + age;
     }
-    }
+
+}
 
