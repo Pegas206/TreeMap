@@ -1,8 +1,8 @@
 package ru.netology.people;
 
 public class Person {
-    public String name;
-    public String surname;
+    private String name;
+    private String surname;
 
     public Person(String name, String surname, int age) {
         this.name = name;
@@ -34,7 +34,7 @@ public class Person {
         this.age = age;
     }
 
-    public int age;
+    private int age;
 
     @Override
     public String toString() {

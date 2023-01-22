@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main (String[] args) {
 
         List listPeople = getPerson();
         System.out.println("Исходный список");
@@ -12,13 +12,13 @@ public class Main {
         System.out.println("============================================================");
         System.out.println("Список после сортировки по знатности");
         Collections.sort(listPeople, (Person o1, Person o2) -> {
-            if (o1.getSurname().length() < o2.surname.length()) {
+            if (o1.getSurname().length() < o2.getSurname().length()) {
                 return 1;
-            } else if (o1.getSurname().length() > o2.surname.length()) {
+            } else if (o1.getSurname().length() > o2.getSurname().length()) {
                 return -1;
-            } else if (o1.getAge() < o2.age) {
+            } else if (o1.getAge() < o2.getAge()) {
                 return 1;
-            } else if (o1.getAge() > o2.age) {
+            } else if (o1.getAge() > o2.getAge()) {
                 return -1;
             }
             return 0;
