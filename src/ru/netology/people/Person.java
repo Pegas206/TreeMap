@@ -1,15 +1,17 @@
 package ru.netology.people;
 
-import java.util.concurrent.Callable;
+import java.util.function.Predicate;
 
-public class Person implements Comparable<Person> {
-    private String name;
-    private String surname;
+public class Person {
+    public String name;
+    public String surname;
+
     public Person(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
         this.age = age;
     }
+
     public String getName() {
         return name;
     }
@@ -34,25 +36,16 @@ public class Person implements Comparable<Person> {
         this.age = age;
     }
 
-    private  int age;
-
-@Override
-public String toString() {
-    return name + " " + surname + " " + age;
-}
+    public int age;
 
     @Override
-    public int compareTo(Person o) {
-        if (getSurname().length() < o.surname.length()) {
-            return 1;
-        } else if (getSurname().length() > o.surname.length()) {
-            return -1;
-        } else if (getAge() < o.age){
-                return 1;
-        }else if (getAge() > o.age){
-            return -1;
-        }
-        return 0;
+    public String toString() {
+        return name + " " + surname + " " + age;
     }
+    public static Predicate<Person> isAbove18() {
+        return p -> p.getAge() < 18;
     }
-
+    static Predicate<Person> isNameEqualTo(String name){
+        return p -> p.getName().equals(name);
+    }
+}
