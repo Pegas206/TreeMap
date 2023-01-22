@@ -3,8 +3,8 @@ package ru.netology.people;
 import java.util.function.Predicate;
 
 public class Person {
-    public String name;
-    public String surname;
+    private String name;
+    private String surname;
 
     public Person(String name, String surname, int age) {
         this.name = name;
@@ -12,31 +12,31 @@ public class Person {
         this.age = age;
     }
 
-    public String getName() {
+    private String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    private void setName(String name) {
         this.name = name;
     }
 
-    public String getSurname() {
+    private String getSurname() {
         return surname;
     }
 
-    public void setSurname(String surname) {
+    private void setSurname(String surname) {
         this.surname = surname;
     }
 
-    public int getAge() {
+    private int getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    private void setAge(int age) {
         this.age = age;
     }
 
-    public int age;
+    private int age;
 
     @Override
     public String toString() {
